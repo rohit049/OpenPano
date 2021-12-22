@@ -109,6 +109,7 @@ void write_rgb(const char* fname, const Mat32f& mat) {
 			img(j, i, 1) = (mat.at(i, j, 1) < 0 ? 1 : mat.at(i, j, 1)) * 255;
 			img(j, i, 2) = (mat.at(i, j, 2) < 0 ? 1 : mat.at(i, j, 2)) * 255;
 		}
+	print_debug("Saved to: %s\n", fname);
 	img.save(fname);
 }
 

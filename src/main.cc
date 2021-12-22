@@ -213,7 +213,7 @@ void work(int argc, char* argv[]) {
  *  }
  */
 	vector<string> imgs;
-	REPL(i, 1, argc) imgs.emplace_back(argv[i]);
+	REPL(i, 2, argc) imgs.emplace_back(argv[i]);
 	Mat32f res;
 	if (CYLINDER) {
 		CylinderStitcher p(move(imgs));
@@ -230,7 +230,7 @@ void work(int argc, char* argv[]) {
 	}
 	{
 		GuardedTimer tm("Writing image");
-		write_rgb(IMGFILE(out), res);
+		write_rgb(argv[1], res);
 	}
 }
 
